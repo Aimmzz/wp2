@@ -9,7 +9,7 @@
 <body>
 <center>
     
-
+<?php // echo validation_errors();?>
 <form action="<?= base_url();?>matakuliah/cetak" method="post">
 
 <table>
@@ -23,11 +23,14 @@
         <th>Kode MTK</th>
         <th>:</th>
         <th><input type="text" name="kode" placeholder="Input Kode MTK" maxlenght="10"></th>
+        <th><?= form_error('kode','<small style="color:red">','</small>');?></th>
     </tr>
     <tr>
         <th>Nama MTK</th>
         <th>:</th>
         <th><input type="text" name="nama" placeholder="Input Nama MTK" maxlenght="10"></th>
+        <th><?= form_error('nama','<small style="color:red">','</small>');?></th>
+        <br>
     </tr>
     <tr>
         <th>SKS</th>
@@ -45,7 +48,7 @@
          <th colspan="3"><input type="submit" vaule="SUBMIT"><th>
     </tr>
 </table>
-</from>
+</form>
 </center>
 </body>
 </html>
