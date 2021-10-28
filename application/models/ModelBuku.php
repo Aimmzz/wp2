@@ -51,7 +51,7 @@ class modelBuku extends CI_Model{
     }
 
     public function updateKategori($where = null , $data = null){
-        $this->db->update('kategori', $data , $where):
+        $this->db->update('kategori', $data , $where);
     }
 
     //join

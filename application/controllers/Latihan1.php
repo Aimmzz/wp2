@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Latihan1 extends CI_Controller{
 //hanya menggunakan controller
     public function index(){
-        echo "selamat datang... selamat belajar web programming";
+        $this->load->view('profil');
     }
 //tidak pakai model
     public function penjumlahan(){
