@@ -4,7 +4,11 @@ defined('BASEPATH') or exit('no direct script access allowed');
 class ModelUser extends CI_Model{
 
     public function simpanData($data = null){
-        return $this->db-get_where('user' , $where);
+        return $this->db->insert('user' , $data);
+    }
+
+    public function cekData($where = null){
+        return $this->db->get_where('user' , $where);
     }
 
     public function getUserWhere($where = null){
