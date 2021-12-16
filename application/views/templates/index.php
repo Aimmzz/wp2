@@ -10,7 +10,7 @@
                 <div class="col mr-2">
                     <div class="text-md font-weight-bold text-white text-uppercase mb-1">Jumlah Anggota</div>
                     <div class="h1 mb-0 font-weight-bold text-white">
-                        <?=$this->Modeluser->getUserWhere(['role_id' => 1])->num_rows();?>
+                        <?=$this->ModelUser->getUserWhere(['role_id' => 1])->num_rows();?>
                     </div>
                 </div>
                 <div class="col-auto">
