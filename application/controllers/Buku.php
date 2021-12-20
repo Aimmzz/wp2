@@ -15,8 +15,7 @@ class Buku extends CI_Controller
         $data['user'] = $this->Modeluser->cekData(['email' => $this->session->userdata('email')])->row_array();
         $data['buku'] = $this->ModelBuku->getBuku()->result_array();
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
-        $this->form_validation->set_rules('judul_buku', 'Judul 
-Buku', 'required|min_length[3]', [
+        $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required|min_length[3]', [
             'required' => 'Judul Buku harus diisi',
             'min_length' => 'Judul buku terlalu pendek'
         ]);
@@ -28,13 +27,11 @@ Buku', 'required|min_length[3]', [
                 'required' => 'Nama pengarang harus diisi',
             ]
         );
-        $this->form_validation->set_rules('pengarang', 'Nama 
-Pengarang', 'required|min_length[3]', [
+        $this->form_validation->set_rules('pengarang', 'Nama Pengarang', 'required|min_length[3]', [
             'required' => 'Nama pengarang harus diisi',
             'min_length' => 'Nama pengarang terlalu pendek'
         ]);
-        $this->form_validation->set_rules('penerbit', 'Nama 
-Penerbit', 'required|min_length[3]', [
+        $this->form_validation->set_rules('penerbit', 'Nama Penerbit', 'required|min_length[3]', [
             'required' => 'Nama penerbit harus diisi',
             'min_length' => 'Nama penerbit terlalu pendek'
         ]);
@@ -110,7 +107,7 @@ Penerbit', 'required|min_length[3]', [
                 'dibooking' => 0,
                 'image' => $gambar
             ];
-            $this->Modelbuku->simpanBuku($data);
+            $this->ModelBuku->simpanBuku($data);
             redirect('buku');
         }
     }
@@ -121,7 +118,7 @@ Penerbit', 'required|min_length[3]', [
         $kategori = $this->ModelBuku->joinKategoriBuku(['buku.id' => $this->uri->segment(3)])->result_array();
         foreach ($kategori as $k){
             $data['id'] = $k['id_kategori'];
-            $data['k'] = $k['kategori'];
+            $data['k'] = $k['nama_kategori'];
         }
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
         $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required|min_length[3]', [
